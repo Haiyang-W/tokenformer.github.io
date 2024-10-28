@@ -62,29 +62,24 @@
                             <br>
                             It not only tokenizes data but also model parameters, 
                             replacing the model concept with interaction flows between data and parameter tokens.
-                            This makes it can handle a variable number of parameters, offer greater flexibility than traditional Transformers,
+                            This makes it can handle a variable number of parameters, offers greater flexibility than traditional Transformers,
                             will further contribute to the development of FMs in the future as follows:
                         </p>
                     
                         <div class="icon-container">
                             <div class="icon-item">
                                 <img src="./static/img/icons/visual.svg" alt="Visual Representation Icon">
-                                <div><strong>Incremental Model Scaling</strong>: Our model allows for progressive and efficient scaling without necessitating retraining from scratch by adding new key-value parameter pairs,  achieving performance comparable to Transformers trained from scratch
-                                    while greatly reducing training costs. <em><strong>This advantage is the primary focus of exploration in the paper.</strong></em></div>
+                                <div><strong>Incremental Model Scaling</strong>: Our model allows for progressive scaling without retraining from scratch by adding new key-value parameter pairs, greatly reduces training costs. <em><strong>This advantage is the primary focus in this paper.</strong></em></div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/connector.svg" alt="Connector Design Icon">
-                                <div><strong>Device-Cloud Collaboration</strong>: Device-Cloud Collaboration" in product-level large models refers to a 
-                                    system where computation tasks are intelligently divided between a user's local device and the cloud, 
-                                    leveraging the device for real-time processing and the cloud for intensive tasks, 
-                                    resulting in faster responses. </div>
+                                <div><strong>Device-Cloud Collaboration</strong>: It can serve as the cloud knowledge base in Device-Cloud Collaboration, 
+                                    with each pair of key-value parameter tokens representing a learnable pattern. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/data.svg" alt="Instruction Tuning Data Icon">
-                                <div><strong>Sparse Inference (MoE)</strong>: We interpret Tokenformer as an extreme instantiation
-                                    of the Mixture of Experts (MoE) framework, where each key-value parameter pair functions as an
-                                    individual expert. This MoE-like architecture has the potential to significantly reduce
-                                    the computational costs associated with token-parameter interactions. </div>
+                                <div><strong>Sparse Inference (MoE)</strong>: We interpret Tokenformer as an extreme Mixture of Experts (MoE), with each 
+                                    key-value pair acting as an expert, which can greatly reduce token-parameter interaction costs. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/recipe.svg" alt="Instruction Tuning Recipes Icon">
@@ -95,16 +90,19 @@
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/connector.svg" alt="Benchmarking Icon">
-                                <div><strong>Integrating Vision and Language Models.</strong>: Leveraging the parameter-efficient tuning capabilities of
-                                    Tokeformer, we can achieve seamless integration of visual and linguistic modalities. This can be accomplished by unifying the key-value parameter tokens derived from pre-trained visual Tokenformer
-                                    and language Tokenformer into a single parameter set. </div>
+                                <div><strong>Integrating Vision and Language Models.</strong>: Tokenformer enables seamless 
+                                    integration of visual and language modalities by merging key-value parameter tokens 
+                                    from pre-trained visual and language models. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/eval.svg" alt="Benchmarking Icon">
                                 <div><strong>Model Interpretability</strong>: It’s attention-based design naturally enhances interpretability in token-parameter interactions.</div>
                             </div>
                         </div>
-
+                </div>
+                <div class="header-image">
+                    <img draggable="false" src="static/img/comparision.png" alt="Teaser Image" class="teaser-image">
+                    <!-- <img draggable="false" src="static/img/incremental_scaling.png" alt="Teaser Image" class="teaser-image"> -->
                     <div class="button-container">
                         <!-- replace arxiv -->
                         <a href="https://github.com/Haiyang-W/TokenFormer" class="button paper-link" target="_blank">
@@ -129,16 +127,12 @@
                         </a>
                         <!-- <br> -->
                         <a href="https://github.com/Haiyang-W/TokenFormer" class="button" target="_blank">
-                            <span class="icon is-small">
+                            <!-- <span class="icon is-small">
                                 <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
+                            </span> -->
                             <span>Checkpoints</span>
                         </a>
                     </div>
-                </div>
-                <div class="header-image">
-                    <img draggable="false" src="static/img/comparision.png" alt="Teaser Image" class="teaser-image">
-                    <img draggable="false" src="static/img/incremental_scaling.png" alt="Teaser Image" class="teaser-image">
                 </div>
             </div>
         </div>
