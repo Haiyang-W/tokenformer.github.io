@@ -196,8 +196,7 @@
                     <img data-zoomable="" draggable="false" src="static/img/token-parameter_attention.png" alt="Token-Parameter Attention">
                     <figcaption style="text-align: left;">
                         <strong>Figure 6:</strong> TokenFormer is a fully attention-driven architecture featuring a new token-parameter attention (Pattention) layer. 
-                        The Pattention uses a set of learnable tokens to represent model parameters and lets the input tokens attend to them. As the model scales, 
-                        TokenFormer adds new learnable tokens to expand the existing key-value parameter sets, while keeping the feature dimension constant and leaving the rest of the computation unaffected.
+                        The Pattention uses a set of learnable tokens to represent model parameters and lets the input tokens attend to them.
                     </figcaption>
                 </figure>
             </d-figure>
@@ -217,12 +216,59 @@
             </p>
             <d-figure id="eq1">
                 <figure>
-                    <img data-zoomable="" draggable="false" src="static/img/softmax.png" alt="pattention function">
+                    <img data-zoomable="" draggable="false" src="static/img/softmax.png" alt="modified softmax function">
                 </figure>
             </d-figure>
             <p class="text">
                 where A is the attention score, &#964; is the scale factor, and f is a non-linearity function, which in our formulation is set to the GeLU function. 
-                This design improves gradient stability in our architecture and results in better performance compared to the standard softmax operation
+                This design improves gradient stability in our architecture and results in better performance compared to the standard softmax operation.
+                <br>
+                <br>
+                <strong>Overall Architecture. </strong> The above figure illustrates the architecture of Tokenformer. 
+                We replace all the linear projections with our Pattention layers. The MHA block is formulated as follows:
+            </p>
+            <d-figure id="eq1">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/mha.png" alt="MHA function">
+                </figure>
+            </d-figure>
+            <p class="text">
+                The FFN block utilizes a single Pattention layer,
+            </p>
+            <d-figure id="eq1">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/ffn.png" alt="ffn function">
+                </figure>
+            </d-figure>
+            <p class="text">
+                By designing the architecture in this manner, we represent all fundamental components-including both
+                input data and model parameters—as tokens within the computational framework, thereby establishing a
+                fully attention-based neural network characterized by exceptional flexibility
+            </p>
+
+
+        </div>
+
+        <div id='method' class="method-block">
+
+            <h1 class="text">Progressive model scaling</h1>
+            <p class="text">
+                Consider an existing Tokenformer model equipped with a set of pre-trained key-value parameter tokens,
+                we augment this set by appending new key-value parameter tokens.
+            </p>
+            <d-figure id="fig-pattention">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/model_scaling.png" alt="Progressive model scaling">
+                    <figcaption style="text-align: left;">
+                        <strong>Figure 6:</strong> As the model scales, TokenFormer adds new learnable tokens to expand the 
+                        existing key-value parameter sets, while keeping the feature dimension constant and leaving the 
+                        rest of the computation unaffected.
+                    </figcaption>
+                </figure>
+            </d-figure>
+            <p class="text">
+                This scaling scheme permits the integration of an arbitrary number of parameters without altering the
+                input or output dimension.
             </p>
         </div>
 
