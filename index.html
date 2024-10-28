@@ -176,6 +176,56 @@
 
         <hr>
 
+        <div id='method' class="method-block">
+
+            <h1 class="text">Token-Parameter Attention</h1>
+            <p class="text">
+                Although transformers excel across various domains, their scalability is limited by high computational overheads resulting from prescribed token-parameter 
+                interactions (i.e., linear projections). As a result, scaling strategies that adjust architectural components(e.g., channel dimensions) typically require 
+                retraining the entire model from the beginning, leading to inefficient use of computational resources.  
+                <br>
+                <br>
+                To overcome this challenge, we propose TokenFormer, an architecture entirely based on attention mechanisms. The central innovation of TokenFormer is token-<strong>P</strong>arameter <strong>attention</strong> (Pattention) layer, which incorporates a set of trainable tokens functioning as model parameters and then employs cross-attention to manage interactions between input tokens and these parameter tokens.
+                <!-- <ol class="text">
+                    <li>We encode spatial inductive bias by explicitly localizing the aggregation space for each token in the query.</li>
+                    <li>We perform vision feature aggregation multiple times across the LLM layers, allowing the model to repeatedly reference necessary visual information.</li>
+                </ol> -->
+            </p>
+            <d-figure id="fig-pattention">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/token-parameter_attention.png" alt="Token-Parameter Attention">
+                    <figcaption style="text-align: left;">
+                        <strong>Figure 6:</strong> TokenFormer is a fully attention-driven architecture featuring a new token-parameter attention (Pattention) layer. 
+                        The Pattention uses a set of learnable tokens to represent model parameters and lets the input tokens attend to them. As the model scales, 
+                        TokenFormer adds new learnable tokens to expand the existing key-value parameter sets, while keeping the feature dimension constant and leaving the rest of the computation unaffected.
+                    </figcaption>
+                </figure>
+            </d-figure>
+            <p class="text">
+                <strong>Pattention.</strong> To implement our Pattention mechanism, we use inputs as query and introduce two sets of
+                n learnable parameter tokens to represent the keys and values. 
+                The output from the scaled dot-product Pattention layer is computed as:
+            </p>
+            <d-figure id="eq1">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/pattention.png" alt="pattention function">
+                </figure>
+            </d-figure>
+            <p class="text">
+                where &#920; is a modified softmax operation for
+                stable optimization of Pattention layer. The output Pattention scores are formulated as,
+            </p>
+            <d-figure id="eq1">
+                <figure>
+                    <img data-zoomable="" draggable="false" src="static/img/softmax.png" alt="pattention function">
+                </figure>
+            </d-figure>
+            <p class="text">
+                where A is the attention score, &#964; is the scale factor, and f is a non-linearity function, which in our formulation is set to the GeLU function. 
+                This design improves gradient stability in our architecture and results in better performance compared to the standard softmax operation
+            </p>
+        </div>
+
         <!-- <div id='visual_representations' class="vision-block">
             
             <div id="sec:benchmarking" class="sub-section">
@@ -502,7 +552,7 @@
                     </figcaption>
                 </figure>
             </d-figure>
-        </div> -->
+        </div>
 
         <!-- <div id='sota' class="sota-block">
             <h1 class="text">State of the Art MLLM Performance</h1>
