@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs</title>
+        <title>TokenFormer: A Fully Attention-based Neural Network for Foundation Models</title>
         <link rel="icon" type="image/x-icon" href="/static/img/icons/jellyfish.ico">
 
         <meta charset="utf-8">
@@ -52,83 +52,104 @@
         <div class="header-wrapper">
             <div class="header-container" id="header-container">
                 <div class="header-content">
-                    <h1 style="margin-top: 0px"><i>Cambrian-1</i></h1>
-                    <h2>A Fully Open, <i>Vision-Centric</i><br>
-                        Exploration of Multimodal LLMs</h2>
+                    <h1 style="margin-top: 0px"><i>TokenFormer</i></h1>
+                    <h2>A Fully Attention-Based Neural Network for Foundation Models with Tokenized Model Parameters<br></h2>
                         <p>
-                            Introducing Cambrian-1, a family of 
-                            <em><strong>vision-centric</strong></em>
-                            multimodal LLMs (MLLMs). Cambrian-1 is structured around five key pillars:
+                            TokenFormer unifies the computations of <em><strong>token-token</strong></em> and <em><strong>token-parameter</strong></em>
+                            interactions by entirely employing the attention mechanism, 
+                            <em><strong>maximizes the flexibility of neural network</strong></em>. &emsp;
+                            <br>
+                            <br>
+                            We not only tokenize data but also tokenize parameters, 
+                            aiming to eliminate the concept of <em>model</em>. 
+                            Instead, the network's computation is transformed into the interaction flows between tokens, 
+                            such as data tokens and parameter tokens.
+
+                            <br>
+                            <br>
+                            The flexibility makes it can handle a variable number of parameters, 
+                            inherently enhances the model's scalability, facilitating progressively efficient scaling.
+
+                            <br>
+                            <br>
+                            Hope that this architecture can offer greater flexibility than traditional Transformers,
+                            will further contribute to the development of FMs in the future as follows:
                         </p>
                     
                         <div class="icon-container">
                             <div class="icon-item">
                                 <img src="./static/img/icons/visual.svg" alt="Visual Representation Icon">
-                                <div><strong>Visual Representations</strong>: We explore various vision encoders and their combinations.</div>
+                                <div><strong>Incremental Model Scaling</strong>: Our model allows for progressive and efficient scaling without necessitating retraining from scratch by adding new key-value parameter pairs,  achieving performance comparable to Transformers trained from scratch
+                                    while greatly reducing training costs. <em><strong>This advantage is the primary focus of exploration in the paper.</strong></em></div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/connector.svg" alt="Connector Design Icon">
-                                <div><strong>Connector Design</strong>: We design a new dynamic and <i>spatially-aware</i> connector that integrates visual features from several models with LLMs while reducing the number of tokens.</div>
+                                <div><strong>Device-Cloud Collaboration</strong>: Device-Cloud Collaboration" in product-level large models refers to a 
+                                    system where computation tasks are intelligently divided between a user's local device and the cloud, 
+                                    leveraging the device for real-time processing and the cloud for intensive tasks, 
+                                    resulting in faster responses. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/data.svg" alt="Instruction Tuning Data Icon">
-                                <div><strong>Instruction Tuning Data</strong>: We curate high-quality visual instruction-tuning data from public sources, emphasizing the importance of distribution balancing.</div>
+                                <div><strong>Sparse Inference (MoE)</strong>: We interpret Tokenformer as an extreme instantiation
+                                    of the Mixture of Experts (MoE) framework, where each key-value parameter pair functions as an
+                                    individual expert. This MoE-like architecture has the potential to significantly reduce
+                                    the computational costs associated with token-parameter interactions. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/recipe.svg" alt="Instruction Tuning Recipes Icon">
-                                <div><strong>Instruction Tuning Recipes</strong>: We discuss instruction tuning strategies and practices.</div>
+                                <div><strong>Parameter Efficient Tuning</strong>: When confronted with new tasks or datasets, 
+                                    the model can augment its pre-trained parameters by
+                                    incorporating these new parameter tokens, 
+                                    thereby adapting to specific task requirements quickly. </div>
+                            </div>
+                            <div class="icon-item">
+                                <img src="./static/img/icons/connector.svg" alt="Benchmarking Icon">
+                                <div><strong>Integrating Vision and Language Models.</strong>: Leveraging the parameter-efficient tuning capabilities of
+                                    Tokeformer, we can achieve seamless integration of visual and linguistic modalities. This can be accomplished by unifying the key-value parameter tokens derived from pre-trained visual Tokenformer
+                                    and language Tokenformer into a single parameter set. </div>
                             </div>
                             <div class="icon-item">
                                 <img src="./static/img/icons/eval.svg" alt="Benchmarking Icon">
-                                <div><strong>Benchmarking</strong>: We examine existing MLLM benchmarks and introduce a new vision-centric benchmark, "CV-Bench".</div>
+                                <div><strong>Model Interpretability</strong>: As Tokenformer is entirely based on attention mechanisms, it
+                                    inherently benefits from the interpretability associated with attention in token-parameter interactions.</div>
                             </div>
                         </div>
 
                     <div class="button-container">
                         <!-- replace arxiv -->
-                        <a href="https://arxiv.org/abs/2406.16860" class="button paper-link" target="_blank">
+                        <a href="https://github.com/Haiyang-W/TokenFormer" class="button paper-link" target="_blank">
                             <span class="icon is-small">
                                 <i class="ai ai-arxiv"></i>
                             </span>
                             arXiv
                         </a>
                         <!-- replace pdf -->
-                        <a href="https://arxiv.org/pdf/2406.16860" class="button paper-link" target="_blank">
+                        <a href="https://github.com/Haiyang-W/TokenFormer" class="button paper-link" target="_blank">
                             <span class="icon is-small">
                                 <i class="fas fa-file-pdf"></i>
                             </span>
                             <span>pdf</span>
                         </a>
                         <!-- replace image -->
-                        <a href="https://github.com/cambrian-mllm/cambrian" class="button" target="_blank">
+                        <a href="https://github.com/Haiyang-W/TokenFormer" class="button" target="_blank">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
                             </span>
                             <span>Code</span>
                         </a>
                         <!-- <br> -->
-                        <a href="https://huggingface.co/collections/nyu-visionx/cambrian-1-models-666fa7116d5420e514b0f23c" class="button" target="_blank">
+                        <a href="https://github.com/Haiyang-W/TokenFormer" class="button" target="_blank">
                             <span class="icon is-small">
                                 <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
                             </span>
                             <span>Checkpoints</span>
                         </a>
-                        <a href="https://huggingface.co/collections/nyu-visionx/cambrian-data-6667ce801e179b4fbe774e11" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
-                            <span>Data</span>
-                        </a>                        
-                        <a href="https://huggingface.co/datasets/nyu-visionx/CV-Bench" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
-                            </span>
-                            <span>CV-Bench</span>
-                        </a>
                     </div>
                 </div>
                 <div class="header-image">
-                    <img draggable="false" src="static/img/cambrian.png" alt="Teaser Image" class="teaser-image">
+                    <img draggable="false" src="static/img/comparision.png" alt="Teaser Image" class="teaser-image">
+                    <img draggable="false" src="static/img/incremental_scaling.png" alt="Teaser Image" class="teaser-image">
                 </div>
             </div>
         </div>
@@ -136,93 +157,43 @@
         <div class="byline">
             <div class="byline-container">
                 <p>
-                    <a href="https://tsb0601.github.io/petertongsb/" class="author-link" target="_blank">Shengbang Tong<sup>*</sup></a> &emsp;
-                    <a href="https://ellisbrown.github.io/" class="author-link" target="_blank">Ellis Brown<sup>*</sup></a> &emsp;
-                    <a href="https://penghao-wu.github.io/" class="author-link" target="_blank">Penghao Wu<sup>*</sup></a> &emsp;
-                    <br>
-                    <a href="https://sites.google.com/view/sanghyunwoo/" class="author-link" target="_blank">Sanghyun Woo</a> &emsp;
-                    <a href="https://www.linkedin.com/in/manoj-middepogu/" class="author-link" target="_blank">Manoj Middepogu</a> &emsp;
-                    <a href="https://www.linkedin.com/in/sai-charitha-akula-32574887" class="author-link" target="_blank">Sai Charitha Akula</a> &emsp;
-                    <a href="https://jihanyang.github.io/" class="author-link" target="_blank">Jihan Yang</a> &emsp;
-                    <a href="https://github.com/vealocia" class="author-link" target="_blank">Shusheng Yang</a> &emsp;
-                    <a href="https://github.com/adithyaiyer1999" class="author-link" target="_blank">Adithya Jairam Iyer</a> &emsp;
-                    <a href="https://xichenpan.com/" class="author-link" target="_blank">Xichen Pan</a> &emsp;
-                    <a href="https://www.linkedin.com/in/ziteng-wang-694b8b227/" class="author-link" target="_blank">Ziteng Wang</a> &emsp;
-                    <br>
-                    <a href="https://cs.nyu.edu/~fergus/" class="author-link" target="_blank">Rob Fergus</a> &emsp;
-                    <a href="https://yann.lecun.com/" class="author-link" target="_blank">Yann LeCun</a> &emsp;
-                    <a href="https://www.sainingxie.com/" class="author-link" target="_blank">Saining Xie<sup>&dagger;</sup></a>
+                    <a href="https://haiyang-w.github.io/" class="author-link" target="_blank">Haiyang Wang<sup>1,3</sup></a> &emsp;
+                    <a href="https://yue-fan.github.io/" class="author-link" target="_blank">Yue Fan<sup>1<sup></a> &emsp;
+                    <a href="https://ferjad.github.io/" class="author-link" target="_blank">Muhammad Ferjad Naeem<sup>2</sup></a> &emsp;
+                    <a href="https://xianyongqin.github.io/" class="author-link" target="_blank">Yongqin Xian<sup>2</sup></a> &emsp;
+                    <!-- <br> -->
+                    <a href="https://janericlenssen.github.io/" class="author-link" target="_blank">Jan Eric Lenssen<sup>1</sup></a> &emsp;
+                    <a href="http://www.liweiwang-pku.com/" class="author-link" target="_blank">Liwei Wang<sup>3</sup></a> &emsp;
+                    <a href="https://federicotombari.github.io/" class="author-link" target="_blank">Federico Tombari<sup>2</sup></a> &emsp;
+                    <a href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-machine-learning/people/bernt-schiele" class="author-link" target="_blank">Bernt Schiele<sup>1</sup></a> &emsp;
                     <p></p>
-                    <a href="https://cs.nyu.edu/home/index.html" class="affiliation-link" id="affiliation" target="_blank">New York University</a>
+                    <sup>1</sup><a href="https://www.mpi-inf.mpg.de/home" class="affiliation-link" target="_blank">Max Planck Institute for Informatics</a> &emsp;
+                    <sup>2</sup><a href="https://about.google/" class="affiliation-link" target="_blank">Google</a> &emsp;
+                    <sup>3</sup><a href="https://english.pku.edu.cn/" class="affiliation-link" target="_blank">Peking University</a> &emsp;
                 </p>
             </div>
         </div>
-        <p style="text-align: center;">
-            <span class="author-note"><sup>*</sup>Project lead</span>&emsp;
-            <span class="author-note"><sup>&dagger;</sup>Corresponding author</span>
-        </p>
         
 
         
         <p class="text abstract">
-
-            We introduce Cambrian-1, a family of multimodal LLMs (MLLMs) designed with a <strong>vision-<i>centric</i></strong> approach. 
-            While stronger language models can enhance multimodal capabilities, 
-            the design choices for vision components are often insufficiently explored and disconnected from visual representation learning research. 
-
-            <br><br>
-            Cambrian-1 is structured around five key pillars, each offering important insights into the design space of MLLMs:
-            <ol class="text">
-                <li><strong><a href="#visual_representations">&sect;Visual Representations</a></strong>: We explore various vision encoders and their combinations.</li>
-                <li><strong><a href="#connector_design">&sect;Connector Design</a></strong>: We design a new dynamic and <i>spatially-aware</i> connector that integrates visual features from several models with LLMs while reducing the number of tokens.</li>
-                <li><strong><a href="#instruction_data">&sect;Instruction Tuning Data</a></strong>: We curate high-quality visual instruction-tuning data from public sources, emphasizing the importance of distribution balancing.</li>
-                <li><strong><a href="#sec:inst_tuning">&sect;Instruction Tuning Recipes</a></strong>: We discuss instruction tuning strategies and practices.</li>
-                <li><strong><a href="#sec:benchmarking">&sect;Benchmarking</a></strong>: We examine existing MLLM benchmarks and introduce a new vision-centric benchmark "CV-Bench".</li>
-            </ol>
+            We introduce Tokenformer, a <strong><i>fully attention-based architecture</i></strong> that unifies the computations 
+            of token-token and token-parameter interactions by entirely employing the attention mechanism, 
+            <strong>maximizes the flexibility of neural network</strong>. The advantage makes it can handle a variable number of parameters, 
+            inherently enhances the model's scalability, facilitating progressively efficient scaling.
         </p>
-
-        <div class="icon-row">
-            <a href="#visual-representation" class="icon-link">
-                <img src="static/img/icons/visual.svg" alt="Visual Representation Logo" class="icon">
-                Visual<br>Representations
-            </a>
-            <a href="#connector_design" class="icon-link">
-                <img src="static/img/icons/connector.svg" alt="Connector Logo" class="icon">
-                Connector<br>Design
-            </a>
-            <a href="#instruction_data" class="icon-link">
-                <img src="static/img/icons/data.svg" alt="Data Logo" class="icon">
-                Instruction<br>Data
-            </a>
-            <a href="#sec:inst_tuning" class="icon-link">
-                <img src="static/img/icons/recipe.svg" alt="Recipe Logo" class="icon">
-                Instruction<br>Recipes
-            </a>
-            <a href="#sec:benchmarking" class="icon-link">
-                <img src="static/img/icons/eval.svg" alt="Eval Logo" class="icon">
-                Evaluation<br>Protocol
-            </a>
-        </div>
-
-        <p class="click-hint" style="width: 85%;">
-            <img src="static/img/icons/click.gif" style="width: 1.5rem">
-            <strong>Click to jump to each section.</strong>
-        </p>
-
 
         <p class="text abstract">
-            To this end, Cambrian-1 not only achieves state-of-the-art performance, but also serves as a comprehensive, open cookbook for instruction-tuned MLLMs. See <a href="#State-of-the-art-MLLM-performance">§State-of-the-art MLLM performance</a>. 
-            We provide <a href="https://huggingface.co/nyu-visionx" target="_blank">model weights</a>, 
-            <a href="https://github.com/cambrian-mllm/cambrian" target="_blank">code</a>, 
-            <a href="https://huggingface.co/nyu-visionx" target="_blank">datasets</a>, 
-            and detailed instruction-tuning and evaluation recipes. We hope our release will inspire and accelerate advancements in multimodal systems and visual representation learning.
+            Hope that this architecture can offer greater flexibility than traditional Transformers,
+             will further contribute to the development of foundation models, sparse inference (MoE), 
+             parameter efficient tuning, device-cloud collaboration, vision-language, model interpretability, and so on.
         </p>
 
         
 
         <hr>
 
-        <div id='visual_representations' class="vision-block">
+        <!-- <div id='visual_representations' class="vision-block">
             
             <div id="sec:benchmarking" class="sub-section">
                 <h1 class="text">Analyzing the Benchmarks</h1>
@@ -548,232 +519,9 @@
                     </figcaption>
                 </figure>
             </d-figure>
-        </div>
+        </div> -->
 
-        <div id="instruction_data" class="data-block">
-            <h1 class="text">Instruction Tuning Data for Training MLLMs</h1>
-            <p class="text">
-                Previous work highlights the importance of data in training MLLMs, but explicit investigations are limited. 
-                In this study, we gather all available instruction tuning data and examine data curation by enhancing diversity, balancing sources, and improving mixtures. 
-                
-            </p>
-    
-            <div class="subsection">
-                <h3 class="text">Data Collection</h3>
-                <p class="text" id="data_collection">
-                    <strong>Collecting Instruction Tuning Data from existing data sources</strong> 
-                    We first use existing multimodal benchmarks and datasets involving visual interaction data,
-                    such as Visual Question Answering (VQA) and OCR data. 
-                    We also collect a small volume of high-quality language-only instruction-following data to maintain its language ability. 
-                </p>
-                <d-figure id="fig-cambrian7m">
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/cambrian_7m.png" alt="Cambrian-7M: A Large-Scale Curated Instruction Tuning Dataset for Training MLLM">
-                        <figcaption>
-                            <strong>Figure 7:</strong> Cambrian-7M: A Large-Scale Curated Instruction Tuning Dataset for Training MLLM.
-                        </figcaption>
-                    </figure>
-                </d-figure>
-                <p class="text">
-                    <strong>Targeted Internet Data Collection Engine</strong> 
-                    We also introduce a data engine designed to create large-scale, reliable, 
-                    high-quality knowledge-based multimodal instruction tuning data.
-                </p>
-                <d-figure id="fig-dataengine">
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/dataenginefigurepdf_crop.png" alt="Targeted Internet Data Collection Engine">
-                        <figcaption>
-                            <strong>Figure 8:</strong> Targeted Internet Data Collection Engine.
-                        </figcaption>
-                    </figure>
-                </d-figure>
-    
-                <p class="text">
-                    <strong>Cambrian-10M</strong> 
-                    To this end, we create a large pool of instruction tuning data, which we refer to as Cambrian-10M. 
-                    This pool contains approximately 9784k data points, offering a diverse range of data for our work and future research. 
-                    We visualize its composition in <a href="#fig-cambrian7m">Figure 7</a>.
-                </p>
-            </div>
-    
-            <div id="sec:data_curation" class="subsection">
-                <h3 class="text">Data Curation</h3>
-                <p class="text">
-                    Cambrian-10M is a large pool of instruction tuning data sourced from a variety of data sources, 
-                    with an unbalanced data ratio between categories. 
-                    Here, we take a preliminary step to study data curation by improving data balancing and adjusting data ratios.
-                </p>
-    
-                <p class="text" id="data_curation">
-                    <strong>Data Balancing</strong> 
-                    We follow previous work to set thresholds t 
-                    for the number of data points from a single data source. 
-                    We choose t = 150k, 250k, 350k, and 450k in this section and observe an 
-                    elbow effect in <a href="#tab:data_balance_result">Table 3</a>&mdash;finding that a threshold between 250k and 350k work the best for Cambrian-10M.
-                </p>
-                <d-figure id="fig-filter_k">
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/Cumulative_Sum_of_Counts.png" alt="Data Balancing via Applying Thresholds on Data Sources">
-                        <figcaption>
-                            <strong>Figure 9:</strong> Data Balancing via Applying Thresholds on Data Sources.
-                        </figcaption>
-                    </figure>
-                </d-figure>
-                <br>
-                <div id="tab:data_balance_result" style="display: flex; flex-direction: column; align-items: center;">
-                    <div class="table-container">
-                        <table class="data-table">
-                          <thead>
-                            <tr>
-                              <th></th>
-                              <th>Average</th>
-                              <th>General</th>
-                              <th>Knowledge</th>
-                              <th>OCR & Chart</th>
-                              <th>Vision-Centric</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>150k</td>
-                              <td>53.7</td>
-                              <td>68.0</td>
-                              <td>51.3</td>
-                              <td>45.2</td>
-                              <td>50.5</td>
-                            </tr>
-                            <tr>
-                              <td>250k</td>
-                              <td class="highlight">54.3</td>
-                              <td class="highlight">68.1</td>
-                              <td>51.5</td>
-                              <td>45.3</td>
-                              <td>52.2</td>
-                            </tr>
-                            <tr>
-                              <td>350k</td>
-                              <td class="highlight">54.3</td>
-                              <td>67.4</td>
-                              <td>51.4</td>
-                              <td class="highlight">46.0</td>
-                              <td class="highlight">52.3</td>
-                            </tr>
-                            <tr>
-                              <td>450k</td>
-                              <td>54.2</td>
-                              <td>68.0</td>
-                              <td class="highlight">52.2</td>
-                              <td>45.5</td>
-                              <td>50.7</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                    <figcaption style="text-align: center; width: 100%;">
-                        <strong>Table 3:</strong> Threshold 𝑡 value between 250k and 350k obtains better performance.
-                    </figcaption>
-                </div>
-
-                <p class="text">
-                    <strong>Data Ratio</strong> 
-                    Given the various capabilities of different types of visual instruction tuning data, it is essential to balance the ratio of these data types. 
-                    We conduct pilot experiments with a fixed dataset size of 1350k, 
-                    examining the impact of different data ratios on downstream performance. 
-                    We visualize the results in <a href="#fig-data_ratio">Figure 10</a> and summarize our findings as follows: 
-                    (i) Balancing General, OCR, and Language data is crucial. 
-                    (ii) Performance on knowledge-intensive tasks is influenced by multiple factors, 
-                    often requiring a mix of OCR, chart, reasoning, and general perception. 
-                </p>
-                <d-figure id="fig-data_ratio">
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/data_mixture_ratio_w_avg_score.png" alt="Exploring instruction tuning data mixture ratios">
-                        <figcaption>
-                            <strong>Figrue 10:</strong> Exploring instruction tuning data mixture ratios.
-                        </figcaption>
-                    </figure>
-                </d-figure>
-
-                <p class="text">
-                    <strong>Cambrian-7M</strong> 
-                    By applying data filtering to Cambrian-10M with our identified data ratio, we create a smaller but higher-quality dataset called Cambrian-7M.
-                    <a href="#tab:data_ratio_result">Table 4</a> showcases the benefits of a well-balanced and carefully curated dataset. Despite having fewer samples, Cambrian-7M demonstrates improved performance.
-                </p>
-                <div id="tab:data_ratio_result" style="display: flex; flex-direction: column; align-items: center;">
-                    <div class="table-container">
-                        <table class="data-table">
-                          <thead>
-                            <tr>
-                              <th></th>
-                              <th>Average</th>
-                              <th>General</th>
-                              <th>Knowledge</th>
-                              <th>OCR & Chart</th>
-                              <th>Vision-Centric</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>LLaVA-665K</td>
-                              <td>40.7</td>
-                              <td>64.7</td>
-                              <td>45.2</td>
-                              <td>20.8</td>
-                              <td>32.0</td>
-                            </tr>
-                            <tr>
-                              <td>Cambrian-10M</td>
-                              <td>54.8</td>
-                              <td>68.7</td>
-                              <td>51.6</td>
-                              <td class="highlight">47.3</td>
-                              <td>51.4</td>
-                            </tr>
-                            <tr>
-                              <td>Cambrian-7M</td>
-                              <td class="highlight">55.9</td>
-                              <td class="highlight">69.6</td>
-                              <td class="highlight">52.6</td>
-                              <td class="highlight">47.3</td>
-                              <td class="highlight">54.1</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    <figcaption style="text-align: center; width: 100%;">
-                        Table 4: Performance improves with better instruction tuning data curation.
-                    </figcaption>
-                </div>
-                
-
-            </div>
-    
-            <div class="subsection">
-                <h3 class="text">Alleviating the "Answer Machine Phenomenon" via System Prompts</h3>
-                <p class="text">
-                    Here, we investigate a phenomenon we term the "answer machine phenomenon." 
-                    We observe that a well-trained MLLM may excel at VQA benchmarks, but lack basic conversational abilities and default to outputting short, curt responses (see examples in <a href="#fig-sysprompt">Figure 5</a>). 
-                </p>
-    
-                <p class="text">
-                    To address this, we find that incorporating additional system prompts during training mitigates this phenomenon. 
-                    We append prompts such as "<em>Answer the question using a single word or phrase.</em>" 
-                    before questions that generate a single word or phrase in the response. 
-                    We observe that after integrating these system prompts, the model's benchmark performance remains unchanged, 
-                    while its conversational ability significantly improves. 
-                </p>
-                <d-figure id="fig-sysprompt">
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/sysprompt.jpg" alt="Incorporating System Prompt in Instruction Tuning Data alleviates “Answer Machine Phenomenon”">
-                        <figcaption>
-                            <strong>Figure 11:</strong> Incorporating System Prompt in Instruction Tuning Data alleviates the “Answer Machine Phenomenon”.
-                        </figcaption>
-                    </figure>
-                </d-figure>
-            </div>
-        </div>
-
-        <div id='sota' class="sota-block">
+        <!-- <div id='sota' class="sota-block">
             <h1 class="text">State of the Art MLLM Performance</h1>
             <p class="text">
                 Finally, we leverage the insights from all of our previous studies to train a high-performance Cambrian model.
@@ -1206,14 +954,18 @@
                 </figure>
             </d-figure>
 
-        </div>
+        </div> -->
 
         <div id="conclusion" style="position: relative; margin-top: 40px; margin-bottom: 0px;">
             <h2 class="text" style="margin-top:0px; margin-bottom:10px">Conclusion</h2>
             <p class="text">
-                To conclude, Cambrian-1 is a family of state-of-the-art MLLMs that achieve top performance across diverse benchmarks 
-                and excel in visual-centric tasks. We provide model weights, open-source code, datasets, and detailed recipes for model training and evaluation. 
-                We hope our work will strengthen the open research community and accelerate research in both visual representation learning and multimodal systems.
+                This paper introduces Tokenformer, a naturally scalable architecture that leverages the attention
+                mechanism to facilitate not only inter-token computations but also interactions between tokens and
+                model parameters, thereby enhancing architectural flexibility. By representing model parameters as
+                tokens, we replace all linear projection layers in the Transformer with our Pattention layers, allowing
+                for seamless and efficient incremental scaling without the need for retraining from scratch. We believe
+                that this architecture, offering greater flexibility than traditional Transformers, will further contribute
+                to the development of foundation models.
             </p>
         </div>
 
@@ -1221,9 +973,9 @@
         <d-appendix>
             <h3>BibTeX</h3>
             <p class="bibtex">
-                @article{tong2024cambrian,<br>
-                &nbsp;&nbsp;title={{Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs}},<br>
-                &nbsp;&nbsp;author={Tong, Shengbang and Brown, Ellis and Wu, Penghao and Woo, Sanghyun and Middepogu, Manoj and Akula, Sai Charitha and Yang, Jihan and Yang, Shusheng, and Iyer, Adithya and Pan, Xichen and Wang, Austin and Fergus, Rob and LeCun, Yann and Xie, Saining},<br>
+                @article{haiyang2024tokenformer,<br>
+                &nbsp;&nbsp;title={{TokenFormer: Rethinking Transformer Scaling with Tokenized Model Parameters}},<br>
+                &nbsp;&nbsp;author={Haiyang Wang, Yue Fan, Muhammad Ferjad Naeem, Liwei Wang, Yongqin Xian, Jan Eric Lenssen, Federico Tombari, Bernt Schiele},<br>
                 &nbsp;&nbsp;journal={arXiv preprint arXiv:2406.16860},<br>
                 &nbsp;&nbsp;year={2024}<br>
                 }
